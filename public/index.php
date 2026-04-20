@@ -14,17 +14,16 @@ session_start();
             
             background-color: #f5f7fa;
         }
-        .content-area {
+          .content-area {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
              
-            background-image: url('assets/images/edificios13.png');
+            background-image: url('assets/images/edificios10.jpeg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
-        
         .top-header {
             background: #14295e;
             border-bottom: 1.5px solid #e9eef5;
