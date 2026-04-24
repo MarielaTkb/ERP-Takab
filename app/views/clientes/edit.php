@@ -13,8 +13,19 @@ $nombre = $_SESSION['nombre'] ?? '';
 </head>
 <body>
 <div class="main-layout">
-    <?php include __DIR__ . '/../partials/sidebar.php'; ?>
-
+   <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="login-logo"><img src="assets/images/icono_takab.png" alt="logo_TAKAB" width="90" height="55"></div>
+            <div>
+                <div class="sidebar-title">TAKAB</div>
+                <div class="sidebar-desc">Clientes</div>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="clientes.php" class="active"><i class="fa fa-building"></i> Clientes</a>
+            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</a>
+        </nav>
+    </aside>
     <div class="main-content">
         <h2><i class="fa fa-pen"></i> Editar cliente</h2>
         <?php if (!empty($msg)): ?>

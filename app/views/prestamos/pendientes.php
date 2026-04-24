@@ -24,7 +24,28 @@ if (!isset($total_paginas)) $total_paginas = 1;
 </head>
 <body>
 <div class="main-layout">
-    <?php include __DIR__ . '/../partials/sidebar.php'; ?>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="login-logo"><img src="assets/images/icono_takab.png" alt="logo_TAKAB" width="90" height="55""></div>
+            <div>
+                <div class="sidebar-title">TAKAB</div>
+                <div class="sidebar-desc">Dashboard</div>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
+                <a href="usuarios.php"><i class="fa-solid fa-users-cog"></i> Gestión de Usuarios</a>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
+                <a href="inventario_actual.php"><i class="fa-solid fa-list-check"></i> Inventario</a>
+                <a href='revisar_solicitudes.php'><i class="fa-solid fa-comment-medical"></i>Solicitudes de Material</a>
+                <a href='prestamos_pendientes.php' class="active">Préstamos Pendientes</a>
+                <a href='prestamos_historial.php'>Historial de Préstamos</a>
+                <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
+
+            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</a>
+        </nav>
+    </aside>
 
     <div class="content-area">
         <?php include __DIR__ . '/../partials/topbar.php'; ?>

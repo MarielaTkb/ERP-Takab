@@ -48,7 +48,37 @@ $importeTotal = array_sum(array_map(fn($row) => (float) ($row['total'] ?? 0), $f
 </head>
 <body>
 <div class="main-layout">
-    <?php include __DIR__ . '/../partials/sidebar.php'; ?>
+     <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="login-logo"><img src="assets/images/icono_takab.png" alt="logo_TAKAB" width="90" height="55"></div>
+            <div>
+                <div class="sidebar-title">TAKAB</div>
+                <div class="sidebar-desc">Compras</div>
+            </div>
+        </div>
+        <nav class="sidebar-nav">     
+            <?php if ($role === 'Administrador'): ?>
+                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
+                <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
+                <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
+            <?php elseif ($role === 'Almacen'): ?>
+                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
+                <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
+                <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
+            <?php elseif ($role === 'Compras'): ?>
+                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
+                <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
+                <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
+            <?php endif; ?>
+            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</a>
+        </nav>
+    </aside>
     <div class="content-area">
         <?php include __DIR__ . '/../partials/topbar.php'; ?>
         <main class="facturas-main">

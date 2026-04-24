@@ -56,7 +56,33 @@ $buildQuery = function(array $overrides = []) {
 </head>
 <body>
 <div class="main-layout">
-    <?php include __DIR__ . '/../partials/sidebar.php'; ?>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="login-logo"><img src="assets/images/icono_takab.png" alt="logo_TAKAB" width="90" height="55"></div>
+            <div>
+                <div class="sidebar-title">TAKAB</div>
+                <div class="sidebar-desc">Inventario y almacén</div>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <?php if ($role === 'Administrador'): ?>
+                <a href="usuarios.php"><i class="fa-solid fa-users-cog"></i> Gestión de Usuarios</a>
+            <?php endif; ?>
+            <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
+            <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
+            <?php if ($role !== 'Empleado'): ?>
+                <a href="revisar_solicitudes.php"><i class="fa-solid fa-comment-medical"></i> Solicitudes de Material</a>
+                <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
+            <?php endif; ?>
+            <?php if ($role === 'Empleado'): ?>
+                <a href="solicitudes_crear.php"><i class="fa-solid fa-plus-square"></i> Solicitar Material</a>
+                <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
+            <?php endif; ?>
+                <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</a>
+        </nav>
+    </aside>
 
     <div class="content-area">
         <?php include __DIR__ . '/../partials/topbar.php'; ?>
