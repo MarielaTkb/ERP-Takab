@@ -250,7 +250,7 @@ class Navigation
         ],
         'ordenes'             => [
             ['label' => 'Compras'],
-            ['label' => 'Ã“rdenes de compra'],
+            ['label' => 'Órdenes de compra'],
         ],
         'ordenes_crear'       => [
             ['label' => 'Compras', 'url' => 'ordenes_compra.php'],
@@ -269,27 +269,27 @@ class Navigation
         ],
         'prestamos'           => [
             ['label' => 'Inventario', 'url' => 'inventario_actual.php'],
-            ['label' => 'PrÃ©stamos de herramientas'],
+            ['label' => 'Préstamos de herramientas'],
         ],
         'reportes_rotacion'   => [
             ['label' => 'Reportes'],
-            ['label' => 'RotaciÃ³n de inventario'],
+            ['label' => 'Rotación de inventario'],
         ],
         'solicitudes_revisar' => [
             ['label' => 'Solicitudes'],
-            ['label' => 'RevisiÃ³n de solicitudes'],
+            ['label' => 'Revisión de solicitudes'],
         ],
         'reportes'            => [
             ['label' => 'Reportes'],
         ],
         'configuracion'       => [
-            ['label' => 'ConfiguraciÃ³n'],
+            ['label' => 'Configuración'],
         ],
         'documentacion'       => [
-            ['label' => 'DocumentaciÃ³n'],
+            ['label' => 'Documentación'],
         ],
         'logs'                => [
-            ['label' => 'BitÃ¡cora del sistema'],
+            ['label' => 'Bitácora del sistema'],
         ],
         'solicitudes_crear'   => [
             ['label' => 'Solicitudes'],

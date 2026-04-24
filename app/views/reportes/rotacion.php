@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $role = $_SESSION['role'] ?? '';
 $nombre = $_SESSION['nombre'] ?? '';
 
@@ -16,7 +16,7 @@ $buildQuery = function(array $overrides = []) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Rotación de inventario | TAKAB</title>
+    <title>RotaciÃ³n de inventario | TAKAB</title>
     <link rel="stylesheet" href="/assets/css/dashboard.css">
     <link rel="stylesheet" href="/assets/css/reportes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -50,40 +50,40 @@ $buildQuery = function(array $overrides = []) {
             <div class="login-logo"><img src="assets/images/icono_takab.png" alt="logo_TAKAB" width="90" height="55"></div>
             <div>
                 <div class="sidebar-title">TAKAB</div>
-                <div class="sidebar-desc">Inventario y almacén</div>
+                <div class="sidebar-desc">Inventario y almacÃ©n</div>
             </div>
         </div>
         <nav class="sidebar-nav">
             <a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
             <?php if ($role === 'Administrador'): ?>
-                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> GestiÃ³n de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
                 <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
-                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotación de Inventario</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> RotaciÃ³n de Inventario</a>
                 <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>
-            <?php elseif ($role !== 'Almacen'): ?>
-                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> ConfiguraciÃ³n</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>DocumentaciÃ³n</a>
+            <?php elseif ($role === 'Almacen'): ?>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> GestiÃ³n de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
                 <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
-                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotación de Inventario</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> RotaciÃ³n de Inventario</a>
                 <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
                 <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>
-            <?php elseif ($role !== 'Compras'): ?>
-              <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> ConfiguraciÃ³n</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>DocumentaciÃ³n</a>
+            <?php elseif ($role === 'Compras'): ?>
+              <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> GestiÃ³n de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>  
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>DocumentaciÃ³n</a>  
             <?php elseif ($role === 'Empleado'): ?>
                 <a href="solicitudes_crear.php"><i class="fa-solid fa-plus-square"></i> Solicitar Material</a>
                 <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
             <?php endif; ?>
-            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</a>
+            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesiÃ³n</a>
         </nav>
     </aside>
     <div class="content-area">
@@ -92,7 +92,7 @@ $buildQuery = function(array $overrides = []) {
         <main class="dashboard-main rotacion-main">
             <div class="rotacion-header">
                 <div>
-                    <h1>Rotación de inventario</h1>
+                    <h1>RotaciÃ³n de inventario</h1>
                     <p class="reportes-desc">Identifica productos con alto y bajo movimiento para ajustar tus niveles de stock.</p>
                 </div>
                 <div class="section-actions">
@@ -121,7 +121,7 @@ $buildQuery = function(array $overrides = []) {
                         </select>
                     </div>
                     <div>
-                        <label for="almacen_id">Almacén</label>
+                        <label for="almacen_id">AlmacÃ©n</label>
                         <select id="almacen_id" name="almacen_id">
                             <option value="">Todos</option>
                             <?php foreach ($almacenes as $almacen): ?>
@@ -141,17 +141,17 @@ $buildQuery = function(array $overrides = []) {
                     <table class="rotacion-table">
                         <thead>
                             <tr>
-                                <th>Código</th>
+                                <th>CÃ³digo</th>
                                 <th>Producto</th>
                                 <th>Tipo</th>
-                                <th>Almacén</th>
+                                <th>AlmacÃ©n</th>
                                 <th>Stock actual</th>
                                 <th>Salidas</th>
                                 <th>Entradas</th>
-                                <th>Índice</th>
-                                <th>Clasificación</th>
-                                <th>Último movimiento</th>
-                                <th>Días sin movimiento</th>
+                                <th>Ãndice</th>
+                                <th>ClasificaciÃ³n</th>
+                                <th>Ãšltimo movimiento</th>
+                                <th>DÃ­as sin movimiento</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -178,7 +178,7 @@ $buildQuery = function(array $overrides = []) {
                                         <td><?= number_format((float) $row['indice'], 2) ?></td>
                                         <td><span class="badge-rotacion <?= $badgeClass ?>"><?= htmlspecialchars($row['clasificacion']) ?></span></td>
                                         <td><?= $row['ultimo_movimiento'] ? date('d/m/Y H:i', strtotime($row['ultimo_movimiento'])) : '-' ?></td>
-                                        <td><?= $row['dias_sin_movimiento'] !== null ? $row['dias_sin_movimiento'] . ' días' : '-' ?></td>
+                                        <td><?= $row['dias_sin_movimiento'] !== null ? $row['dias_sin_movimiento'] . ' dÃ­as' : '-' ?></td>
                                     </tr>
                                 <?php endforeach; ?>
                             <?php endif; ?>
@@ -192,4 +192,5 @@ $buildQuery = function(array $overrides = []) {
 <?php include __DIR__ . '/../partials/scripts.php'; ?>
 </body>
 </html>
+
 
