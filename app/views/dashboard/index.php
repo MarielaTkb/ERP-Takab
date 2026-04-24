@@ -14,7 +14,7 @@ $alertas = $datos['alertas'] ?? [];
 </head>
 <body>
 <div class="main-layout">
-     <aside class="sidebar">
+    <aside class="sidebar">
         <div class="sidebar-header">
             <div class="login-logo"><img src="assets/images/icono_takab.png" alt="logo_TAKAB" width="90" height="55"></div>
             <div>
@@ -23,19 +23,31 @@ $alertas = $datos['alertas'] ?? [];
             </div>
         </div>
         <nav class="sidebar-nav">
-            <a href="dashboard.php" class="active"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
             <?php if ($role === 'Administrador'): ?>
-                <a href="usuarios.php"><i class="fa-solid fa-users-cog"></i> Gestión de Usuarios</a>
                 <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
-                <a href="inventario_actual.php"><i class="fa-solid fa-list-check"></i> Inventario</a>
-                <a href="revisar_solicitudes.php"><i class="fa-solid fa-comment-medical"></i> Solicitudes de Material</a>
+                <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
+                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotación de Inventario</a>
+                <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
                 <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
-            <?php elseif ($role === 'Almacen'): ?>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>
+            <?php elseif ($role !== 'Almacen'): ?>
                 <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
-                <a href="revisar_solicitudes.php"><i class="fa-solid fa-inbox"></i> Solicitudes de Material</a>
-                <a href="inventario_actual.php"><i class="fa-solid fa-list-check"></i> Inventario</a>
+                <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
+                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotación de Inventario</a>
+                <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
+                <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>
+            <?php elseif ($role !== 'Compras'): ?>
+              <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
+                <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
+                <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>  
             <?php elseif ($role === 'Empleado'): ?>
                 <a href="solicitudes_crear.php"><i class="fa-solid fa-plus-square"></i> Solicitar Material</a>
                 <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
@@ -210,4 +222,5 @@ $alertas = $datos['alertas'] ?? [];
 <?php include __DIR__ . '/../partials/scripts.php'; ?>
 </body>
 </html>
+
 

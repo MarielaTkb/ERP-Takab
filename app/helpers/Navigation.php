@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 class Navigation
 {
@@ -10,19 +10,19 @@ class Navigation
             'roles' => ['Administrador', 'Almacen', 'Compras', 'Empleado'],
         ],
         'usuarios'            => [
-            'label' => 'Gestión de Usuarios',
+            'label' => 'GestiÃ³n de Usuarios',
             'icon'  => 'fa-solid fa-users-cog',
             'href'  => 'usuarios.php',
-            'roles' => ['Administrador'],
+            'roles' => ['Administrador', 'Almacen', 'Compras', 'Empleado'],
         ],
         'productos'           => [
-            'label' => 'Gestión de Productos',
+            'label' => 'GestiÃ³n de Productos',
             'icon'  => 'fa-solid fa-boxes-stacked',
             'href'  => 'productos.php',
             'roles' => ['Administrador', 'Almacen', 'Compras'],
         ],
         'ordenes'             => [
-            'label' => 'Órdenes de compra',
+            'label' => 'Ã“rdenes de compra',
             'icon'  => 'fa-solid fa-file-invoice-dollar',
             'href'  => 'ordenes_compra.php',
             'roles' => ['Administrador', 'Almacen', 'Compras'],
@@ -52,7 +52,7 @@ class Navigation
             'roles' => ['Administrador', 'Almacen', 'Compras'],
         ],
         'prestamos'           => [
-            'label' => 'Préstamos de herramientas',
+            'label' => 'PrÃ©stamos de herramientas',
             'icon'  => 'fa-solid fa-screwdriver-wrench',
             'href'  => 'prestamos_pendientes.php',
             'roles' => ['Administrador', 'Almacen'],
@@ -65,7 +65,7 @@ class Navigation
         ],
 
         'reportes_rotacion'   => [
-            'label' => 'Rotación de inventario',
+            'label' => 'RotaciÃ³n de inventario',
             'icon'  => 'fa-solid fa-arrows-rotate',
             'href'  => 'reportes_rotacion.php',
             'roles' => ['Administrador', 'Almacen', 'Compras'],
@@ -78,22 +78,22 @@ class Navigation
             'roles' => ['Administrador', 'Almacen', 'Compras'],
         ],
         'logs'                => [
-            'label' => 'Bitácora',
+            'label' => 'BitÃ¡cora',
             'icon'  => 'fa-solid fa-clipboard-list',
             'href'  => 'logs.php',
-            'roles' => ['Administrador'],
+            'roles' => ['Administrador', 'Almacen', 'Compras', 'Empleado'],
         ],
         'configuracion'       => [
-            'label' => 'Configuración',
+            'label' => 'ConfiguraciÃ³n',
             'icon'  => 'fa-solid fa-gear',
             'href'  => 'ajustes.php',
             'roles' => ['Administrador', 'Almacen'],
         ],
         'documentacion'       => [
-            'label' => 'Documentación',
+            'label' => 'DocumentaciÃ³n',
             'icon'  => 'fa-solid fa-book',
             'href'  => 'documentacion.php',
-            'roles' => ['Administrador'],
+            'roles' => ['Administrador', 'Almacen', 'Compras', 'Empleado'],
         ],
 
         'solicitudes_crear'   => [
@@ -250,7 +250,7 @@ class Navigation
         ],
         'ordenes'             => [
             ['label' => 'Compras'],
-            ['label' => 'Órdenes de compra'],
+            ['label' => 'Ã“rdenes de compra'],
         ],
         'ordenes_crear'       => [
             ['label' => 'Compras', 'url' => 'ordenes_compra.php'],
@@ -269,27 +269,27 @@ class Navigation
         ],
         'prestamos'           => [
             ['label' => 'Inventario', 'url' => 'inventario_actual.php'],
-            ['label' => 'Préstamos de herramientas'],
+            ['label' => 'PrÃ©stamos de herramientas'],
         ],
         'reportes_rotacion'   => [
             ['label' => 'Reportes'],
-            ['label' => 'Rotación de inventario'],
+            ['label' => 'RotaciÃ³n de inventario'],
         ],
         'solicitudes_revisar' => [
             ['label' => 'Solicitudes'],
-            ['label' => 'Revisión de solicitudes'],
+            ['label' => 'RevisiÃ³n de solicitudes'],
         ],
         'reportes'            => [
             ['label' => 'Reportes'],
         ],
         'configuracion'       => [
-            ['label' => 'Configuración'],
+            ['label' => 'ConfiguraciÃ³n'],
         ],
         'documentacion'       => [
-            ['label' => 'Documentación'],
+            ['label' => 'DocumentaciÃ³n'],
         ],
         'logs'                => [
-            ['label' => 'Bitácora del sistema'],
+            ['label' => 'BitÃ¡cora del sistema'],
         ],
         'solicitudes_crear'   => [
             ['label' => 'Solicitudes'],
@@ -365,7 +365,7 @@ class Navigation
             );
         }
 
-        $html[] = '        <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</a>';
+        $html[] = '        <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesiÃ³n</a>';
         $html[] = '    </nav>';
         $html[] = '</aside>';
 
@@ -423,8 +423,8 @@ class Navigation
         }
 
         $roleMap = [
-            'Almacén' => 'Almacen',
-            'almacén' => 'Almacen',
+            'AlmacÃ©n' => 'Almacen',
+            'almacÃ©n' => 'Almacen',
             'almacen' => 'Almacen',
         ];
         if (isset($roleMap[$role])) {
@@ -435,3 +435,4 @@ class Navigation
         return in_array($role, $valid, true) ? $role : 'Empleado';
     }
 }
+

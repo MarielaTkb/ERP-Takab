@@ -23,7 +23,7 @@ $nombre = $_SESSION['nombre'] ?? '';
 </head>
 <body>
 <div class="main-layout">
-     <aside class="sidebar">
+    <aside class="sidebar">
         <div class="sidebar-header">
             <div class="login-logo"><img src="assets/images/icono_takab.png" alt="logo_TAKAB" width="90" height="55"></div>
             <div>

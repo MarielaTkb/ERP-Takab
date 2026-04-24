@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/../../helpers/Session.php';
 Session::requireLogin();
 
@@ -48,7 +48,7 @@ $buildQuery = function(array $overrides = []) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Gestión de Inventario | TAKAB</title>
+    <title>GestiÃ³n de Inventario | TAKAB</title>
     <link rel="stylesheet" href="/assets/css/dashboard.css">
     <link rel="stylesheet" href="/assets/css/productos.css">
     <link rel="stylesheet" href="/assets/css/inventario.css">
@@ -61,40 +61,40 @@ $buildQuery = function(array $overrides = []) {
             <div class="login-logo"><img src="assets/images/icono_takab.png" alt="logo_TAKAB" width="90" height="55"></div>
             <div>
                 <div class="sidebar-title">TAKAB</div>
-                <div class="sidebar-desc">Inventario y almacén</div>
+                <div class="sidebar-desc">Inventario y almacÃ©n</div>
             </div>
         </div>
         <nav class="sidebar-nav">
             <a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
             <?php if ($role === 'Administrador'): ?>
-                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> GestiÃ³n de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
                 <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
-                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotación de Inventario</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> RotaciÃ³n de Inventario</a>
                 <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>
-            <?php elseif ($role !== 'Almacen'): ?>
-                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> ConfiguraciÃ³n</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>DocumentaciÃ³n</a>
+            <?php elseif ($role === 'Almacen'): ?>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> GestiÃ³n de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
                 <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
-                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotación de Inventario</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> RotaciÃ³n de Inventario</a>
                 <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
                 <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>
-            <?php elseif ($role !== 'Compras'): ?>
-              <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> ConfiguraciÃ³n</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>DocumentaciÃ³n</a>
+            <?php elseif ($role === 'Compras'): ?>
+              <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> GestiÃ³n de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>  
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>DocumentaciÃ³n</a>  
             <?php elseif ($role === 'Empleado'): ?>
                 <a href="solicitudes_crear.php"><i class="fa-solid fa-plus-square"></i> Solicitar Material</a>
                 <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
             <?php endif; ?>
-            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</a>
+            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesiÃ³n</a>
         </nav>
     </aside>
 
@@ -120,7 +120,7 @@ $buildQuery = function(array $overrides = []) {
                 <div class="inventario-stat-card primary">
                     <span class="stat-label">Productos registrados</span>
                     <span class="stat-value"><?= number_format($totalRegistros) ?></span>
-                    <span class="stat-foot">Activos: <?= number_format((int) ($stats['activos'] ?? 0)) ?> · Inactivos: <?= number_format((int) ($stats['inactivos'] ?? 0)) ?></span>
+                    <span class="stat-foot">Activos: <?= number_format((int) ($stats['activos'] ?? 0)) ?> Â· Inactivos: <?= number_format((int) ($stats['inactivos'] ?? 0)) ?></span>
                 </div>
                 <div class="inventario-stat-card warning">
                     <span class="stat-label">Stock bajo</span>
@@ -128,7 +128,7 @@ $buildQuery = function(array $overrides = []) {
                     <span class="stat-foot">Sin stock: <?= number_format((int) ($stats['sin_stock'] ?? 0)) ?></span>
                 </div>
                 <div class="inventario-stat-card sky">
-                    <span class="stat-label">Composición</span>
+                    <span class="stat-label">ComposiciÃ³n</span>
                     <span class="stat-value"><?= number_format((int) ($stats['consumibles'] ?? 0)) ?> consumibles</span>
                     <span class="stat-foot">Herramientas: <?= number_format((int) ($stats['herramientas'] ?? 0)) ?></span>
                 </div>
@@ -145,10 +145,10 @@ $buildQuery = function(array $overrides = []) {
                 <form method="get" class="inventario-filters-form">
                     <div class="inv-filter-row">
                         <div class="inv-filter-field">
-                            <label for="buscar">Búsqueda global</label>
+                            <label for="buscar">BÃºsqueda global</label>
                             <div class="filter-input-icon">
                                 <i class="fa fa-search"></i>
-                                <input type="text" id="buscar" name="buscar" placeholder="Nombre, código, descripción o proveedor" value="<?= $buscar ?>">
+                                <input type="text" id="buscar" name="buscar" placeholder="Nombre, cÃ³digo, descripciÃ³n o proveedor" value="<?= $buscar ?>">
                             </div>
                         </div>
                         <div class="inv-filter-field">
@@ -156,7 +156,7 @@ $buildQuery = function(array $overrides = []) {
                             <input type="text" id="codigo_barras" name="codigo_barras" value="<?= htmlspecialchars($filtros['codigo_barras'] ?? '') ?>" placeholder="Escanea o escribe codigo">
                         </div>
                         <div class="inv-filter-field">
-                            <label for="categoria_id">Categoría</label>
+                            <label for="categoria_id">CategorÃ­a</label>
                             <select id="categoria_id" name="categoria_id">
                                 <option value="">Todas</option>
                                 <?php foreach ($categorias as $categoria): ?>
@@ -165,7 +165,7 @@ $buildQuery = function(array $overrides = []) {
                             </select>
                         </div>
                         <div class="inv-filter-field">
-                            <label for="almacen_id">Almacén</label>
+                            <label for="almacen_id">AlmacÃ©n</label>
                             <select id="almacen_id" name="almacen_id">
                                 <option value="">Todos</option>
                                 <?php foreach ($almacenes as $almacen): ?>
@@ -195,7 +195,7 @@ $buildQuery = function(array $overrides = []) {
                             </select>
                         </div>
                         <div class="inv-filter-field">
-                            <label for="estado">Estado físico</label>
+                            <label for="estado">Estado fÃ­sico</label>
                             <select id="estado" name="estado">
                                 <option value="">Todos</option>
                                 <?php foreach ($estadosProducto as $estado): ?>
@@ -225,11 +225,11 @@ $buildQuery = function(array $overrides = []) {
 
                     <div class="inv-filter-row">
                         <div class="inv-filter-field">
-                            <label for="valor_min">Valor mínimo (MXN)</label>
+                            <label for="valor_min">Valor mÃ­nimo (MXN)</label>
                             <input type="number" step="0.01" id="valor_min" name="valor_min" value="<?= $valorMin ?>">
                         </div>
                         <div class="inv-filter-field">
-                            <label for="valor_max">Valor máximo (MXN)</label>
+                            <label for="valor_max">Valor mÃ¡ximo (MXN)</label>
                             <input type="number" step="0.01" id="valor_max" name="valor_max" value="<?= $valorMax ?>">
                         </div>
                         <div class="inv-filter-field">
@@ -253,7 +253,7 @@ $buildQuery = function(array $overrides = []) {
                             </select>
                         </div>
                         <div class="inv-filter-field">
-                            <label for="per_page">Resultados por página</label>
+                            <label for="per_page">Resultados por pÃ¡gina</label>
                             <select id="per_page" name="per_page" onchange="this.form.submit()">
                                 <?php foreach ($perPageOptions as $option): ?>
                                     <option value="<?= $option ?>" <?= (int)$perPage === (int)$option ? 'selected' : '' ?>><?= $option ?></option>
@@ -285,16 +285,16 @@ $buildQuery = function(array $overrides = []) {
                         <table class="inventario-table">
                             <thead>
                                 <tr>
-                                    <th>Código</th>
+                                    <th>CÃ³digo</th>
                                     <th>Producto</th>
                                     <th>Tipo</th>
-                                    <th>Categoría</th>
-                                    <th>Almacén</th>
+                                    <th>CategorÃ­a</th>
+                                    <th>AlmacÃ©n</th>
                                     <th>Stock actual</th>
-                                    <th>Stock mínimo</th>
+                                    <th>Stock mÃ­nimo</th>
                                     <?php if ($mostrarCostos): ?><th>Valor</th><?php endif; ?>
                                     <th>Estado</th>
-                                    <th>Último movimiento</th>
+                                    <th>Ãšltimo movimiento</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -351,7 +351,7 @@ $buildQuery = function(array $overrides = []) {
                     <?php if ($page > 1): ?>
                         <a class="btn-ghost" href="<?= $buildQuery(['page' => $page - 1]) ?>"><i class="fa fa-chevron-left"></i> Anterior</a>
                     <?php endif; ?>
-                    <span class="inventario-pagination-page">Página <?= number_format($page) ?> de <?= number_format($totalPaginas) ?></span>
+                    <span class="inventario-pagination-page">PÃ¡gina <?= number_format($page) ?> de <?= number_format($totalPaginas) ?></span>
                     <?php if ($page < $totalPaginas): ?>
                         <a class="btn-ghost" href="<?= $buildQuery(['page' => $page + 1]) ?>">Siguiente <i class="fa fa-chevron-right"></i></a>
                     <?php endif; ?>
@@ -363,3 +363,4 @@ $buildQuery = function(array $overrides = []) {
 <?php include __DIR__ . '/../partials/scripts.php'; ?>
 </body>
 </html>
+
