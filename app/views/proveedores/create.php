@@ -1,6 +1,6 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/../../helpers/Session.php';
-Session::requireLogin(['Administrador', 'Almacen']);
+Session::requireLogin(['Administrador', 'Almacen', 'Compras']);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -22,19 +22,19 @@ Session::requireLogin(['Administrador', 'Almacen']);
         </div>
         <nav class="sidebar-nav">     
             <?php if ($role === 'Administrador'): ?>
-                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
+                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
                 <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php elseif ($role === 'Almacen'): ?>
-                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
+                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
                 <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php elseif ($role === 'Compras'): ?>
-                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
+                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
                 <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
@@ -85,3 +85,4 @@ Session::requireLogin(['Administrador', 'Almacen']);
 <?php include __DIR__ . '/../partials/scripts.php'; ?>
 </body>
 </html>
+

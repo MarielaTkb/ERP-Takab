@@ -68,19 +68,19 @@ $buildQuery = function(array $overrides = []) {
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
                 <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
-                <a href="compras_proveedor.php"><i class="fa-solid fa-address-book"></i> Compras por proveedor</a>
+                <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php elseif ($role === 'Almacen'): ?>
                 <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
                 <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
-                <a href="compras_proveedor.php"><i class="fa-solid fa-address-book"></i> Compras por proveedor</a>
+                <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php elseif ($role === 'Compras'): ?>
                 <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
                 <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
-                <a href="compras_proveedor.php"><i class="fa-solid fa-address-book"></i> Compras por proveedor</a>
+                <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php endif; ?>
             <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</a>
         </nav>

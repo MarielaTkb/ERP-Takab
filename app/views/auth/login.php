@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -54,8 +54,6 @@
                 <p class="portal-copy">
                     Accede al ERP TAKAB para consultar los módulos disponibles.
                 </p>
-
-            
             </div>
         </div>
 
@@ -73,14 +71,13 @@
                     </div>
                 <?php endif; ?>
 
-                <form method="POST" action="" class="login-form">
+                <form method="POST" action="<?= htmlspecialchars(Session::url('login.php')); ?>" class="login-form">
                         <?php if ($moduleKey): ?>
                             <input type="hidden" name="module" value="<?= htmlspecialchars($moduleKey); ?>">
                         <?php endif; ?>
                         <?php if (!empty($next)): ?>
                             <input type="hidden" name="next" value="<?= htmlspecialchars($next); ?>">
                         <?php endif; ?>
-
 
                         <div class="field-group">
                             <label for="username">Usuario</label>
@@ -99,12 +96,11 @@
                         </div>
 
                        <div class="login-links">
-                          <a class="text-link" href="index.php">Volver al inicio</a> 
-                            <a class="text-link" href="forgot.php">Olvidé mi contraseña</a>
+                          <a class="text-link" href="<?= htmlspecialchars(Session::url('index.php')); ?>">Volver al inicio</a> 
+                            <a class="text-link" href="<?= htmlspecialchars(Session::url('forgot.php')); ?>">Olvidé mi contraseña</a>
                         </div>
 
                     <button type="submit" class="btn-login">Iniciar sesión</button>
-
                 </form>
 
                 <details class="login-test-users">
@@ -112,7 +108,7 @@
                     <ul>
                         <li><b>Admin:</b> admin / 123456</li>
                         <li><b>Almacén:</b> almacen / 123456</li>
-                        <li><b>Empleado:</b> empleado / 123456</li>
+                        <li><b>Empleado:</b> luis / 123456</li>
                         <li><b>Empleado prueba:</b> mau / 123456</li>
                     </ul>
                 </details>
@@ -126,7 +122,6 @@
     const toggleBtn = document.getElementById('togglePassword');
     const passwordInput = document.getElementById('password');
 
-
     if (toggleBtn && passwordInput) {
         toggleBtn.addEventListener('click', function () {
             const isPassword = passwordInput.getAttribute('type') === 'password';
@@ -137,7 +132,6 @@
             }
         });
     }
-
 })();
 </script>
 </body>

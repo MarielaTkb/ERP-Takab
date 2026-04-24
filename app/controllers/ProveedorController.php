@@ -6,14 +6,14 @@ class ProveedorController
 {
     public function index(): void
     {
-        Session::requireLogin(['Administrador', 'Almacen']);
+        Session::requireLogin(['Administrador', 'Almacen', 'Compras']);
         $proveedores = Proveedor::all();
         include __DIR__ . '/../views/proveedores/index.php';
     }
 
     public function create(): void
     {
-        Session::requireLogin(['Administrador', 'Almacen']);
+        Session::requireLogin(['Administrador', 'Almacen', 'Compras']);
         $errors = [];
         $msg    = '';
         $data   = $this->emptyProveedor();
@@ -36,7 +36,7 @@ class ProveedorController
 
     public function edit($id): void
     {
-        Session::requireLogin(['Administrador', 'Almacen']);
+        Session::requireLogin(['Administrador', 'Almacen', 'Compras']);
         $proveedor = Proveedor::find($id);
         if (! $proveedor) {
             die('Proveedor no encontrado.');
@@ -63,7 +63,7 @@ class ProveedorController
 
     public function delete($id): void
     {
-        Session::requireLogin(['Administrador', 'Almacen']);
+        Session::requireLogin(['Administrador', 'Almacen', 'Compras']);
         if ($_SERVER['REQUEST_METHOD'] !== 'POST' || ! Session::checkCsrf($_POST['csrf'] ?? '')) {
             header('Location: proveedores.php?error=csrf');
             exit();
@@ -127,3 +127,4 @@ class ProveedorController
         ];
     }
 }
+

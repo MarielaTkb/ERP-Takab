@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../../helpers/Session.php';
-Session::requireLogin(['Administrador', 'Almacen']);
+Session::requireLogin(['Administrador', 'Almacen', 'Compras']);
 
 $role = $_SESSION['role'] ?? 'Administrador';
 $nombre = $_SESSION['nombre'] ?? '';
@@ -34,11 +34,35 @@ $breadcrumbs = [
             </div>
         </div>
         <nav class="sidebar-nav">
-            <a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
-            <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
-            <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
-            <a href="revisar_solicitudes.php"><i class="fa-solid fa-comment-medical"></i> Solicitudes de Material</a>
-            <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
+           <a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <?php if ($role === 'Administrador'): ?>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
+                <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
+                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotación de Inventario</a>
+                <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
+                <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>
+            <?php elseif ($role !== 'Almacen'): ?>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
+                <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
+                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotación de Inventario</a>
+                <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
+                <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
+                <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>
+            <?php elseif ($role !== 'Compras'): ?>
+              <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
+                <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
+                <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>  
+            <?php elseif ($role === 'Empleado'): ?>
+                <a href="solicitudes_crear.php"><i class="fa-solid fa-plus-square"></i> Solicitar Material</a>
+                <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
+            <?php endif; ?>
             <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</a>
         </nav>
     </aside>
