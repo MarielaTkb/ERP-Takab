@@ -33,7 +33,7 @@ $alertas = $datos['alertas'] ?? [];
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
                 <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
                 <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>
-            <?php elseif ($role !== 'Almacen'): ?>
+            <?php elseif ($role === 'Almacen'): ?>
                 <a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
                 <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
@@ -44,7 +44,7 @@ $alertas = $datos['alertas'] ?? [];
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
                 <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
                 <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>
-            <?php elseif ($role !== 'Compras'): ?>
+            <?php elseif ($role === 'Compras'): ?>
                 <a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
                 <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
@@ -65,7 +65,7 @@ $alertas = $datos['alertas'] ?? [];
         <main class="dashboard-main">
             <div class="dashboard-header-row">
                 <div>
-                    <h1><?= $role === 'Administrador' ? 'Dashboard administrativo' : ($role === 'Almacen' ? 'Dashboard almacen' : 'Dashboard empleado') ?></h1>
+                    <h1><?= $role === 'Administrador' ? 'Dashboard administrativo' : ($role === 'Almacen' ? 'Dashboard almacen' : ($role === 'Compras' ? 'Dashboard compras' : 'Dashboard empleado')) ?></h1>
                     <span class="dashboard-desc">
                         <?php if ($role === 'Administrador'): ?>Resumen general del sistema de inventario TAKAB.
                         <?php elseif ($role === 'Almacen'): ?>Panel para gestion de inventario y solicitudes.
@@ -225,5 +225,6 @@ $alertas = $datos['alertas'] ?? [];
 <?php include __DIR__ . '/../partials/scripts.php'; ?>
 </body>
 </html>
+
 
 
