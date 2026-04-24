@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once __DIR__ . '/../models/Usuario.php';
 require_once __DIR__ . '/../helpers/Session.php';
 

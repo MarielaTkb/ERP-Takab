@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once __DIR__ . '/../helpers/Database.php';
 
 class Producto

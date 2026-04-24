@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 Session::requireLogin();
 
 $role = $_SESSION['role'];

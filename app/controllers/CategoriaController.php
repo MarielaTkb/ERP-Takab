@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once __DIR__ . '/../models/categoria.php';
 require_once __DIR__ . '/../helpers/Session.php';
 

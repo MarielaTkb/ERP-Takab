@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $role = $datos['role'] ?? 'Empleado';
 $nombre = $datos['nombre'] ?? '';
 $alertas = $datos['alertas'] ?? [];

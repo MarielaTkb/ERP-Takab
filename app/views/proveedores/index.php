@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once __DIR__ . '/../../helpers/Session.php';
 Session::requireLogin(['Administrador', 'Almacen', 'Compras']);
 $role   = $_SESSION['role'] ?? '';
@@ -60,7 +60,7 @@ $nombre = $_SESSION['nombre'] ?? '';
                             <span class="config-icon gradient-blue"><i class="fa-solid fa-truck"></i></span>
                             Proveedores
                         </div>
-                        <p class="config-section-desc">Registra a tus proveedores y mantÃ©n sus datos de contacto actualizados.</p>
+                        <p class="config-section-desc">Registra a tus proveedores y mant?n sus datos de contacto actualizados.</p>
                     </div>
                 </div>
                 <div class="config-section-actions" style="margin-bottom:18px;">
@@ -69,7 +69,7 @@ $nombre = $_SESSION['nombre'] ?? '';
                 </div>
 
                 <?php if (isset($_GET['error']) && $_GET['error'] === 'csrf'): ?>
-                    <div class="alert alert-danger"><i class="fa fa-triangle-exclamation"></i> No pudimos completar la acciÃ³n por motivos de seguridad.</div>
+                    <div class="alert alert-danger"><i class="fa fa-triangle-exclamation"></i> No pudimos completar la acci?n por motivos de seguridad.</div>
                 <?php endif; ?>
                 <?php if (isset($_GET['deleted'])): ?>
                     <div class="alert alert-success"><i class="fa fa-check-circle"></i> Proveedor eliminado correctamente.</div>
@@ -80,9 +80,9 @@ $nombre = $_SESSION['nombre'] ?? '';
                         <tr>
                             <th>Nombre</th>
                             <th>Contacto</th>
-                            <th>TelÃ©fono</th>
+                            <th>Tel?fono</th>
                             <th>Email</th>
-                            <th>DirecciÃ³n</th>
+                            <th>Direcci?n</th>
                             <th>Condiciones de pago</th>
                             <th>Acciones</th>
                         </tr>
@@ -99,7 +99,7 @@ $nombre = $_SESSION['nombre'] ?? '';
                                 <td>
                                     <div class="table-actions">
                                         <a href="proveedores_edit.php?id=<?= (int) $prov['id'] ?>" class="btn-inline btn-edit"><i class="fa fa-pen"></i> Editar</a>
-                                        <form method="post" action="proveedores_delete.php" class="inline-form" data-confirm="Â¿Eliminar este proveedor?">
+                                        <form method="post" action="proveedores_delete.php" class="inline-form" data-confirm="?Eliminar este proveedor?">
                                             <input type="hidden" name="csrf" value="<?= Session::csrfToken() ?>">
                                             <input type="hidden" name="id" value="<?= (int) $prov['id'] ?>">
                                             <button type="submit" class="btn-inline btn-delete"><i class="fa fa-trash"></i> Eliminar</button>

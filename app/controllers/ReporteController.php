@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once __DIR__ . '/../helpers/Session.php';
 require_once __DIR__ . '/../helpers/Database.php';
 require_once __DIR__ . '/../helpers/ActivityLogger.php';
@@ -232,8 +232,8 @@ class ReporteController
             if ($stockCalculado < $stockMinimo) {
                 $almacenesDistintos = (int) ($row['almacenes_distintos'] ?? 0);
                 $almacenEtiqueta    = $almacenId !== null
-                    ? ($almacenNombre ?? 'AlmacÃ©n seleccionado')
-                    : ($row['almacen_producto'] ?: ($almacenesDistintos > 1 ? 'MÃºltiples almacenes' : 'Sin asignar'));
+                    ? ($almacenNombre ?? 'Almac?n seleccionado')
+                    : ($row['almacen_producto'] ?: ($almacenesDistintos > 1 ? 'M?ltiples almacenes' : 'Sin asignar'));
 
                 $resultado[] = [
                     'codigo'       => $row['codigo'],
@@ -389,7 +389,7 @@ class ReporteController
 
         return array_map(function (array $row) use ($almacenId, $almacenNombre) {
             $almacenLabel = $almacenId !== null
-                ? ($almacenNombre ?? 'AlmacÃ©n seleccionado')
+                ? ($almacenNombre ?? 'Almac?n seleccionado')
                 : (($row['almacenes_distintos'] ?? 0) > 1
                     ? 'Varios almacenes'
                     : ($row['almacen_referencia'] ?? '-'));

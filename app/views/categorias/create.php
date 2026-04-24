@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 Session::requireLogin([
     'Administrador',
     'Almacen'

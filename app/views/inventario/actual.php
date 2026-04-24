@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once __DIR__ . '/../../helpers/Session.php';
 Session::requireLogin();
 
@@ -120,7 +120,7 @@ $buildQuery = function(array $overrides = []) {
                 <div class="inventario-stat-card primary">
                     <span class="stat-label">Productos registrados</span>
                     <span class="stat-value"><?= number_format($totalRegistros) ?></span>
-                    <span class="stat-foot">Activos: <?= number_format((int) ($stats['activos'] ?? 0)) ?> Â· Inactivos: <?= number_format((int) ($stats['inactivos'] ?? 0)) ?></span>
+                    <span class="stat-foot">Activos: <?= number_format((int) ($stats['activos'] ?? 0)) ?> ? Inactivos: <?= number_format((int) ($stats['inactivos'] ?? 0)) ?></span>
                 </div>
                 <div class="inventario-stat-card warning">
                     <span class="stat-label">Stock bajo</span>
@@ -195,7 +195,7 @@ $buildQuery = function(array $overrides = []) {
                             </select>
                         </div>
                         <div class="inv-filter-field">
-                            <label for="estado">Estado fÃ­sico</label>
+                            <label for="estado">Estado f?sico</label>
                             <select id="estado" name="estado">
                                 <option value="">Todos</option>
                                 <?php foreach ($estadosProducto as $estado): ?>
@@ -253,7 +253,7 @@ $buildQuery = function(array $overrides = []) {
                             </select>
                         </div>
                         <div class="inv-filter-field">
-                            <label for="per_page">Resultados por pÃ¡gina</label>
+                            <label for="per_page">Resultados por p?gina</label>
                             <select id="per_page" name="per_page" onchange="this.form.submit()">
                                 <?php foreach ($perPageOptions as $option): ?>
                                     <option value="<?= $option ?>" <?= (int)$perPage === (int)$option ? 'selected' : '' ?>><?= $option ?></option>
@@ -351,7 +351,7 @@ $buildQuery = function(array $overrides = []) {
                     <?php if ($page > 1): ?>
                         <a class="btn-ghost" href="<?= $buildQuery(['page' => $page - 1]) ?>"><i class="fa fa-chevron-left"></i> Anterior</a>
                     <?php endif; ?>
-                    <span class="inventario-pagination-page">PÃ¡gina <?= number_format($page) ?> de <?= number_format($totalPaginas) ?></span>
+                    <span class="inventario-pagination-page">P?gina <?= number_format($page) ?> de <?= number_format($totalPaginas) ?></span>
                     <?php if ($page < $totalPaginas): ?>
                         <a class="btn-ghost" href="<?= $buildQuery(['page' => $page + 1]) ?>">Siguiente <i class="fa fa-chevron-right"></i></a>
                     <?php endif; ?>

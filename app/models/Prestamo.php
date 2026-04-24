@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once __DIR__ . '/../helpers/Database.php';
 require_once __DIR__ . '/Producto.php';
 

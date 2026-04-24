@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once __DIR__ . '/../app/helpers/Session.php';
 Session::requireLogin();
 
@@ -9,7 +9,7 @@ $nombre = $_SESSION['nombre'] ?? '';
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>DocumentaciÃ³n del sistema | TAKAB</title>
+    <title>Documentaci?n del sistema | TAKAB</title>
     <link rel="stylesheet" href="/assets/css/dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -28,40 +28,40 @@ $nombre = $_SESSION['nombre'] ?? '';
             <div class="login-logo"><img src="assets/images/icono_takab.png" alt="logo_TAKAB" width="90" height="55"></div>
             <div>
                 <div class="sidebar-title">TAKAB</div>
-                <div class="sidebar-desc">Inventario y almacÃ©n</div>
+                <div class="sidebar-desc">Inventario y almac?n</div>
             </div>
         </div>
         <nav class="sidebar-nav">
             <a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
             <?php if ($role === 'Administrador'): ?>
-                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> GestiÃ³n de Productos</a>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gesti?n de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
                 <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
-                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> RotaciÃ³n de Inventario</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotaci?n de Inventario</a>
                 <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> ConfiguraciÃ³n</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>DocumentaciÃ³n</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuraci?n</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentaci?n</a>
             <?php elseif ($role === 'Almacen'): ?>
-                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> GestiÃ³n de Productos</a>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gesti?n de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
                 <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
-                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> RotaciÃ³n de Inventario</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotaci?n de Inventario</a>
                 <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
                 <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> ConfiguraciÃ³n</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>DocumentaciÃ³n</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuraci?n</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentaci?n</a>
             <?php elseif ($role === 'Compras'): ?>
-              <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> GestiÃ³n de Productos</a>
+              <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gesti?n de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>DocumentaciÃ³n</a>  
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentaci?n</a>  
             <?php elseif ($role === 'Empleado'): ?>
                 <a href="solicitudes_crear.php"><i class="fa-solid fa-plus-square"></i> Solicitar Material</a>
                 <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
             <?php endif; ?>
-            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesiÃ³n</a>
+            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesi?n</a>
         </nav>
     </aside>
     <div class="content-area">
@@ -70,14 +70,14 @@ $nombre = $_SESSION['nombre'] ?? '';
             <div class="top-header-user">
                 <span><?= htmlspecialchars($nombre) ?> (<?= htmlspecialchars($role) ?>)</span>
                 <i class="fa-solid fa-user-circle"></i>
-                <a href="logout.php" class="logout-btn" title="Cerrar sesiÃ³n"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                <a href="logout.php" class="logout-btn" title="Cerrar sesi?n"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
             </div>
         </header>
 
         <main class="dashboard-main doc-main">
             <div class="doc-section">
                 <h2><i class="fa-solid fa-book-open"></i> Acerca del sistema</h2>
-                <p>Este portal gestiona el inventario, prÃ©stamos y solicitudes de materiales para la empresa TAKAB. A continuaciÃ³n encontrarÃ¡s guÃ­as rÃ¡pidas de los mÃ³dulos mÃ¡s recientes y accesos a recursos clave.</p>
+                <p>Este portal gestiona el inventario, pr?stamos y solicitudes de materiales para la empresa TAKAB. A continuaci?n encontrar?s gu?as r?pidas de los m?dulos m?s recientes y accesos a recursos clave.</p>
             </div>
 
             <div class="doc-section">
@@ -90,38 +90,38 @@ $nombre = $_SESSION['nombre'] ?? '';
             </div>
 
             <div class="doc-section">
-                <h2><i class="fa-solid fa-arrows-rotate"></i> RotaciÃ³n de inventario</h2>
+                <h2><i class="fa-solid fa-arrows-rotate"></i> Rotaci?n de inventario</h2>
                 <ul>
-                    <li>Consulta <strong>Reportes &gt; RotaciÃ³n de inventario</strong> para identificar productos con alto o bajo movimiento.</li>
-                    <li>El Ã­ndice se calcula con base en las salidas del periodo comparadas contra el stock promedio.</li>
-                    <li>Puedes exportar el anÃ¡lisis a CSV o PDF para compartirlo con tu equipo.</li>
+                    <li>Consulta <strong>Reportes &gt; Rotaci?n de inventario</strong> para identificar productos con alto o bajo movimiento.</li>
+                    <li>El ?ndice se calcula con base en las salidas del periodo comparadas contra el stock promedio.</li>
+                    <li>Puedes exportar el an?lisis a CSV o PDF para compartirlo con tu equipo.</li>
                 </ul>
             </div>
 
             <div class="doc-section">
-                <h2><i class="fa-solid fa-clipboard-list"></i> BitÃ¡cora de actividad</h2>
+                <h2><i class="fa-solid fa-clipboard-list"></i> Bit?cora de actividad</h2>
                 <ul>
-                    <li>Disponible para administradores desde <strong>Reportes &gt; BitÃ¡cora</strong>.</li>
+                    <li>Disponible para administradores desde <strong>Reportes &gt; Bit?cora</strong>.</li>
                     <li>Registra operaciones clave como altas de productos, movimientos de inventario e importaciones masivas.</li>
-                    <li>Utiliza los filtros por fecha, usuario o acciÃ³n para localizar eventos especÃ­ficos.</li>
+                    <li>Utiliza los filtros por fecha, usuario o acci?n para localizar eventos espec?ficos.</li>
                 </ul>
             </div>
 
             <div class="doc-section">
-                <h2><i class="fa-solid fa-database"></i> Respaldos de configuraciÃ³n</h2>
+                <h2><i class="fa-solid fa-database"></i> Respaldos de configuraci?n</h2>
                 <ul>
-                    <li>En la secciÃ³n de <strong>ConfiguraciÃ³n</strong> encontrarÃ¡s la tarjeta â€œRespaldosâ€.</li>
-                    <li>Genera un JSON con categorÃ­as, almacenes, proveedores, unidades y usuarios activos.</li>
-                    <li>GuÃ¡rdalo en un lugar seguro para recuperar la configuraciÃ³n ante incidencias.</li>
+                    <li>En la secci?n de <strong>Configuraci?n</strong> encontrar?s la tarjeta "Respaldos".</li>
+                    <li>Genera un JSON con categor?as, almacenes, proveedores, unidades y usuarios activos.</li>
+                    <li>Gu?rdalo en un lugar seguro para recuperar la configuraci?n ante incidencias.</li>
                 </ul>
             </div>
 
             <div class="doc-section">
-                <h2><i class="fa-solid fa-circle-info"></i> ImportaciÃ³n de productos</h2>
+                <h2><i class="fa-solid fa-circle-info"></i> Importaci?n de productos</h2>
                 <ul>
-                    <li>Descarga la plantilla CSV desde <strong>GestiÃ³n de productos</strong>.</li>
-                    <li>Completa los campos respetando los IDs de catÃ¡logo existentes y vuelve a subir el archivo.</li>
-                    <li>El sistema mostrarÃ¡ un resumen con filas importadas, omitidas y los errores detectados.</li>
+                    <li>Descarga la plantilla CSV desde <strong>Gesti?n de productos</strong>.</li>
+                    <li>Completa los campos respetando los IDs de cat?logo existentes y vuelve a subir el archivo.</li>
+                    <li>El sistema mostrar? un resumen con filas importadas, omitidas y los errores detectados.</li>
                 </ul>
             </div>
         </main>

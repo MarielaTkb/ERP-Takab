@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $role = $_SESSION['role'] ?? '';
 $nombre = $_SESSION['nombre'] ?? '';
 $codigo = trim($codigo ?? '');
@@ -42,40 +42,40 @@ $error = $error ?? '';
             <div class="login-logo"><img src="assets/images/icono_takab.png" alt="logo_TAKAB" width="90" height="55"></div>
             <div>
                 <div class="sidebar-title">TAKAB</div>
-                <div class="sidebar-desc">Inventario y almacÃ©n</div>
+                <div class="sidebar-desc">Inventario y almac?n</div>
             </div>
         </div>
         <nav class="sidebar-nav">
             <a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
             <?php if ($role === 'Administrador'): ?>
-                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> GestiÃ³n de Productos</a>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gesti?n de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
                 <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
-                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> RotaciÃ³n de Inventario</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotaci?n de Inventario</a>
                 <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> ConfiguraciÃ³n</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>DocumentaciÃ³n</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuraci?n</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentaci?n</a>
             <?php elseif ($role === 'Almacen'): ?>
-                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> GestiÃ³n de Productos</a>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gesti?n de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
                 <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
-                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> RotaciÃ³n de Inventario</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotaci?n de Inventario</a>
                 <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
                 <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> ConfiguraciÃ³n</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>DocumentaciÃ³n</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuraci?n</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentaci?n</a>
             <?php elseif ($role === 'Compras'): ?>
-              <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> GestiÃ³n de Productos</a>
+              <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gesti?n de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>DocumentaciÃ³n</a>  
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentaci?n</a>  
             <?php elseif ($role === 'Empleado'): ?>
                 <a href="solicitudes_crear.php"><i class="fa-solid fa-plus-square"></i> Solicitar Material</a>
                 <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
             <?php endif; ?>
-            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesiÃ³n</a>
+            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesi?n</a>
         </nav>
     </aside>
 
