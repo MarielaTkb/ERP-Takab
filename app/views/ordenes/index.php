@@ -21,7 +21,7 @@ $queryWith = function(array $overrides = []) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ordenes de compra | TAKAB</title>
+    <title>Órdenes de compra | TAKAB</title>
     <link rel="stylesheet" href="/assets/css/dashboard.css">
     <link rel="stylesheet" href="/assets/css/reportes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -72,21 +72,21 @@ $queryWith = function(array $overrides = []) {
         </div>
         <nav class="sidebar-nav">     
             <?php if ($role === 'Administrador'): ?>
-                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
+                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
-                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php elseif ($role === 'Almacen'): ?>
-                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
+                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
-                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php elseif ($role === 'Compras'): ?>
-                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
+                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
-                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php endif; ?>
@@ -98,12 +98,12 @@ $queryWith = function(array $overrides = []) {
         <main class="ordenes-main">
             <div class="ordenes-header">
                 <div>
-                    <h1>Ordenes de compra</h1>
+                    <h1>Órdenes de compra</h1>
                     <p style="margin:6px 0 0; color:#61729f;">Gestiona la creacion y seguimiento de compras. El inventario se incrementa cuando registras la factura.</p>
                 </div>
                 <?php if (in_array($role, ['Administrador', 'Compras', 'Almacen'], true)): ?>
                 <div class="acciones">
-                    <a class="btn-primary" href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva orden</a>
+                    <a class="btn-primary" href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 </div>
                 <?php endif; ?>
             </div>

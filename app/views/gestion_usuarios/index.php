@@ -42,7 +42,7 @@
             <div class="note">
                 <i class="fa fa-tools" style="color: #dbac02; margin-right:10px; font-size: 3.5rem;"></i>
                 <b>En construcción.</b> Este módulo aún no está implementado.
-                Cuando se desarrolle, aquí irán agregar usuario, el historial de usuarios y sus permisos.
+                Cuando se desarrolle, aquí irán agregar usuario, bitácora de actividad y el historial de usuarios y sus permisos.
             </div>
 
             <div class="actions">

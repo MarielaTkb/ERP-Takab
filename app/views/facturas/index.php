@@ -58,21 +58,21 @@ $importeTotal = array_sum(array_map(fn($row) => (float) ($row['total'] ?? 0), $f
         </div>
         <nav class="sidebar-nav">     
             <?php if ($role === 'Administrador'): ?>
-                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
+                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
-                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php elseif ($role === 'Almacen'): ?>
-                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
+                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
-                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php elseif ($role === 'Compras'): ?>
-                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
+                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
-                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php endif; ?>
@@ -108,7 +108,7 @@ $importeTotal = array_sum(array_map(fn($row) => (float) ($row['total'] ?? 0), $f
                         </select>
                     </div>
                     <div>
-                        <label for="almacen_id">Almacen</label>
+                        <label for="almacen_id">Almacén</label>
                         <select name="almacen_id" id="almacen_id">
                             <option value="">Todos</option>
                             <?php foreach ($almacenes as $alm): ?>
@@ -153,8 +153,8 @@ $importeTotal = array_sum(array_map(fn($row) => (float) ($row['total'] ?? 0), $f
                             <th>Factura</th>
                             <th>Fecha</th>
                             <th>Proveedor</th>
-                            <th>Almacen</th>
-                            <th>Orden</th>
+                            <th>Almacén</th>
+                            <th>Órden</th>
                             <th>Subtotal</th>
                             <th>Total</th>
                             <th>Acciones</th>

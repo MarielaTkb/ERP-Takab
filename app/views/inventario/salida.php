@@ -42,34 +42,34 @@ $breadcrumbs = [
         <nav class="sidebar-nav">
             <a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
             <?php if ($role === 'Administrador'): ?>
-                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gesti?n de Productos</a>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
-                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
-                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotaci?n de Inventario</a>
+                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Préstamos de herramientas</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotación de Inventario</a>
                 <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuraci?n</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentaci?n</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>
             <?php elseif ($role === 'Almacen'): ?>
-                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gesti?n de Productos</a>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
-                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
-                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotaci?n de Inventario</a>
+                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Préstamos de herramientas</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotación de Inventario</a>
                 <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
                 <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuraci?n</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentaci?n</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>
             <?php elseif ($role === 'Compras'): ?>
-              <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gesti?n de Productos</a>
+              <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentaci?n</a>  
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>  
             <?php elseif ($role === 'Empleado'): ?>
                 <a href="solicitudes_crear.php"><i class="fa-solid fa-plus-square"></i> Solicitar Material</a>
                 <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
             <?php endif; ?>
-            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesi?n</a>
+            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</a>
         </nav>
     </aside>
 
@@ -80,7 +80,7 @@ $breadcrumbs = [
             <div class="inventario-form-header">
                 <div>
                     <h1><i class="fa fa-arrow-up"></i> Registrar salida de inventario</h1>
-                    <p class="form-desc">Descarga material del almac?n y actualiza el stock disponible para los proyectos.</p>
+                    <p class="form-desc">Descarga material del almacén y actualiza el stock disponible para los proyectos.</p>
                 </div>
                 <a class="btn-secondary" href="inventario_actual.php"><i class="fa fa-arrow-left"></i> Volver al inventario</a>
             </div>
@@ -104,13 +104,13 @@ $breadcrumbs = [
                                     <option value="Equipo">Equipo</option>
                                 </select>
                                 <select id="filtro_categoria">
-                                    <option value="">Categoria (todas)</option>
+                                    <option value="">Categoría (todas)</option>
                                     <?php foreach (array_keys($categoriasFiltro) as $categoriaNombre): ?>
                                         <option value="<?= htmlspecialchars($categoriaNombre) ?>"><?= htmlspecialchars($categoriaNombre) ?></option>
                                     <?php endforeach; ?>
                                 </select>
                                 <select id="filtro_almacen">
-                                    <option value="">Almacen asignado (todos)</option>
+                                    <option value="">Almacén asignado (todos)</option>
                                     <?php foreach ($almacenes as $almacen): ?>
                                         <option value="<?= (int) $almacen['id'] ?>"><?= htmlspecialchars($almacen['nombre']) ?></option>
                                     <?php endforeach; ?>
@@ -146,9 +146,9 @@ $breadcrumbs = [
                         </div>
 
                         <div class="form-field">
-                            <label for="almacen_id">Almac?n origen *</label>
+                            <label for="almacen_id">Almacén origen *</label>
                             <select id="almacen_id" name="almacen_id" required>
-                                <option value="">Selecciona un almac?n...</option>
+                                <option value="">Selecciona un almacén...</option>
                                 <?php foreach ($almacenes as $almacen): ?>
                                     <option value="<?= $almacen['id'] ?>" <?= $selectedAlmacen == $almacen['id'] ? 'selected' : '' ?>><?= htmlspecialchars($almacen['nombre']) ?></option>
                                 <?php endforeach; ?>
@@ -187,7 +187,7 @@ $breadcrumbs = [
                             <span class="value" id="summary-stock">-</span>
                         </div>
                         <div class="summary-item">
-                            <span class="label">Stock m?nimo</span>
+                            <span class="label">Stock mínimo</span>
                             <span class="value" id="summary-min">-</span>
                         </div>
                         <div class="summary-item">
@@ -195,7 +195,7 @@ $breadcrumbs = [
                             <span class="value" id="summary-unidad">-</span>
                         </div>
                         <div class="summary-item">
-                            <span class="label">Almac?n asignado</span>
+                            <span class="label">Almacén asignado</span>
                             <span class="value" id="summary-almacen">-</span>
                         </div>
                     </div>
@@ -204,13 +204,13 @@ $breadcrumbs = [
 
             <section class="inventario-form-card inventario-recents">
                 <div class="recents-header">
-                    <h2><i class="fa fa-clock"></i> Ãšltimas salidas registradas</h2>
+                    <h2><i class="fa fa-clock"></i> Últimas salidas registradas</h2>
                     <span class="recents-sub">Ayuda a verificar duplicidades o confirmar capturas recientes</span>
                 </div>
                 <?php if (empty($movimientosRecientes)): ?>
                     <div class="inventario-empty">
                         <i class="fa fa-inbox"></i>
-                        <p>A?n no se registran salidas de inventario.</p>
+                        <p>Aún no se registran salidas de inventario.</p>
                     </div>
                 <?php else: ?>
                     <div class="recents-table-wrapper">
@@ -220,8 +220,8 @@ $breadcrumbs = [
                                     <th>Fecha</th>
                                     <th>Producto</th>
                                     <th>Cantidad</th>
-                                    <th>Almac?n origen</th>
-                                    <th>Registr?</th>
+                                    <th>Almacén origen</th>
+                                    <th>Registrado por</th>
                                     <th>Notas</th>
                                 </tr>
                             </thead>

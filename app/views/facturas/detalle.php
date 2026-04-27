@@ -53,21 +53,21 @@ $detalles = $factura['detalles'] ?? [];
         </div>
         <nav class="sidebar-nav">     
             <?php if ($role === 'Administrador'): ?>
-                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
+                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
-                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php elseif ($role === 'Almacen'): ?>
-                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
+                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
-                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php elseif ($role === 'Compras'): ?>
-                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
+                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
-                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php endif; ?>
@@ -94,7 +94,7 @@ $detalles = $factura['detalles'] ?? [];
                 <div class="alert-success"><i class="fa-solid fa-circle-check"></i> La factura se registro y el inventario fue actualizado.</div>
             <?php endif; ?>
 
-            <div class="alert-info"><i class="fa-solid fa-circle-info"></i> Cada producto listado incremento su stock en el almacen seleccionado.</div>
+            <div class="alert-info"><i class="fa-solid fa-circle-info"></i> Cada producto listado incremento su stock en el almacén seleccionado.</div>
 
             <section class="summary-grid">
                 <div class="summary-card">
@@ -115,7 +115,7 @@ $detalles = $factura['detalles'] ?? [];
                 <h2>Datos generales</h2>
                 <div class="detalle-layout">
                     <div>
-                        <span class="detalle-label">Numero de factura</span>
+                        <span class="detalle-label">Número de factura</span>
                         <span class="detalle-value"><?= htmlspecialchars($factura['numero_factura'] ?: 'Sin folio') ?></span>
                     </div>
                     <div>
@@ -127,11 +127,11 @@ $detalles = $factura['detalles'] ?? [];
                         <span class="detalle-value"><?= date('d/m/Y', strtotime($factura['fecha'])) ?></span>
                     </div>
                     <div>
-                        <span class="detalle-label">Almacen</span>
+                        <span class="detalle-label">Almacén</span>
                         <span class="detalle-value"><?= htmlspecialchars($factura['almacen'] ?? '-') ?></span>
                     </div>
                     <div>
-                        <span class="detalle-label">Orden asociada</span>
+                        <span class="detalle-label">Órden asociada</span>
                         <span class="detalle-value">
                             <?php if (!empty($factura['orden_id'])): ?>
                                 #<?= (int) $factura['orden_id'] ?>
@@ -154,7 +154,7 @@ $detalles = $factura['detalles'] ?? [];
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Codigo</th>
+                            <th>Código</th>
                             <th>Producto</th>
                             <th>Cantidad</th>
                             <th>Costo unitario</th>

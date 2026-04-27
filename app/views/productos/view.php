@@ -52,40 +52,40 @@ function format_stock($value) {
             <div class="login-logo"><img src="assets/images/icono_takab.png" alt="logo_TAKAB" width="90" height="55"></div>
             <div>
                 <div class="sidebar-title">TAKAB</div>
-                <div class="sidebar-desc">Inventario y almac?n</div>
+                <div class="sidebar-desc">Inventario y almacén</div>
             </div>
         </div>
         <nav class="sidebar-nav">
             <a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
             <?php if ($role === 'Administrador'): ?>
-                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gesti?n de Productos</a>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
-                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
-                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotaci?n de Inventario</a>
+                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Préstamos de herramientas</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotación de Inventario</a>
                 <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuraci?n</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentaci?n</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>
             <?php elseif ($role === 'Almacen'): ?>
-                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gesti?n de Productos</a>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
-                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
-                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotaci?n de Inventario</a>
+                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Préstamos de herramientas</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotación de Inventario</a>
                 <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
                 <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuraci?n</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentaci?n</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>
             <?php elseif ($role === 'Compras'): ?>
-              <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gesti?n de Productos</a>
+              <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentaci?n</a>  
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>  
             <?php elseif ($role === 'Empleado'): ?>
                 <a href="solicitudes_crear.php"><i class="fa-solid fa-plus-square"></i> Solicitar Material</a>
                 <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
             <?php endif; ?>
-            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesi?n</a>
+            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</a>
         </nav>
     </aside>
 	<div class="content-area">
@@ -94,7 +94,7 @@ function format_stock($value) {
 			<div class="productos-header">
 				<div>
 					<h1>Detalle de producto</h1>
-					<p class="productos-header-desc">Visualiza toda la informaci?n del art?culo seleccionado.</p>
+					<p class="productos-header-desc">Visualiza toda la información del artículo seleccionado.</p>
 				</div>
 				<div class="productos-header-actions">
 					<a class="btn-secondary" href="productos.php"><i class="fa fa-arrow-left"></i> Volver</a>
@@ -109,10 +109,10 @@ function format_stock($value) {
 						<span class="badge badge-activo <?= (int)($producto['activo_id'] ?? 1) === 1 ? 'activo' : 'inactivo' ?>"><?= htmlspecialchars($estadoActivo) ?></span>
 						<span class="badge badge-tipo <?= safe_css_class($producto['tipo'] ?? '') ?>"><?= htmlspecialchars($producto['tipo'] ?? '') ?></span>
 						<span class="badge badge-stock <?= $stockActual <= 0 ? 'sin' : ($stockActual < $stockMinimo ? 'bajo' : 'ok') ?>">
-							C?digo <?= htmlspecialchars($producto['codigo'] ?? '') ?>
+							Código <?= htmlspecialchars($producto['codigo'] ?? '') ?>
 						</span>
 						<?php if (!empty($producto['categoria'])): ?>
-							<span class="badge" style="background:#eef1ff;color:#3546a5;">Categor?a: <?= htmlspecialchars($producto['categoria']) ?></span>
+							<span class="badge" style="background:#eef1ff;color:#3546a5;">Categoría: <?= htmlspecialchars($producto['categoria']) ?></span>
 						<?php endif; ?>
 					</div>
 					<?php if (!empty($producto['descripcion'])): ?>
@@ -128,7 +128,7 @@ function format_stock($value) {
 						<div class="hero-stat">
 							<span class="label">Stock actual</span>
 							<span class="value"><?= format_stock($stockActual) ?> <?= htmlspecialchars($unidad) ?></span>
-							<span class="stat-foot">M?nimo: <?= format_stock($stockMinimo) ?></span>
+							<span class="stat-foot">Mínimo: <?= format_stock($stockMinimo) ?></span>
 						</div>
 						<div class="hero-stat">
 							<span class="label">Costo unitario</span>
@@ -138,7 +138,7 @@ function format_stock($value) {
 						<div class="hero-stat">
 							<span class="label">Valor inventario</span>
 							<span class="value">$<?= number_format($valorInventario, 2) ?></span>
-							<span class="stat-foot">Almac?n <?= htmlspecialchars($producto['almacen'] ?? '-') ?></span>
+							<span class="stat-foot">Almacén <?= htmlspecialchars($producto['almacen'] ?? '-') ?></span>
 						</div>
 						<div class="hero-stat">
 							<span class="label">Proveedor</span>
@@ -155,18 +155,18 @@ function format_stock($value) {
 				</div>
 			</section>
 			<section class="productos-detail-card">
-				<h2><i class="fa fa-list"></i> Informaci?n general</h2>
+				<h2><i class="fa fa-list"></i> Información general</h2>
 				<div class="detail-grid">
 					<div class="detail-item">
-						<span class="label">C?digo interno</span>
+						<span class="label">Código interno</span>
 						<span class="value mono"><?= htmlspecialchars($producto['codigo'] ?? '') ?></span>
 					</div>
                     <div class="detail-item">
-                    	<span class="label">Codigo de barras</span>
+                    	<span class="label">Código de barras</span>
                     	<span class="value mono"><?= htmlspecialchars($producto['codigo_barras'] ?? '-') ?></span>
                     </div>
 					<div class="detail-item">
-						<span class="label">Categor?a</span>
+						<span class="label">Categoría</span>
 						<span class="value"><?= htmlspecialchars($producto['categoria'] ?? '-') ?></span>
 					</div>
 					<div class="detail-item">
@@ -174,7 +174,7 @@ function format_stock($value) {
 						<span class="value"><?= htmlspecialchars($producto['proveedor'] ?? '-') ?></span>
 					</div>
 					<div class="detail-item">
-						<span class="label">Ubicaci&oacute;n f&iacute;sica</span>
+						<span class="label">Ubicación física</span>
 						<span class="value"><?= htmlspecialchars($producto['ubicacion_fisica'] ?? '-') ?></span>
 					</div>
 					<div class="detail-item">
@@ -228,7 +228,7 @@ function format_stock($value) {
 				<h2><i class="fa fa-clock"></i> Historial interno</h2>
 				<div class="detail-grid">
 					<div class="detail-item">
-						<span class="label">Ãšltimo solicitante</span>
+						<span class="label">Último solicitante</span>
 						<span class="value">
 							<?= htmlspecialchars($producto['last_user'] ?? 'Sin registros') ?>
 							<?php if (!empty($producto['last_requested_by_user_id'])): ?>
@@ -237,7 +237,7 @@ function format_stock($value) {
 						</span>
 					</div>
 					<div class="detail-item">
-						<span class="label">Ãšltima solicitud</span>
+						<span class="label">Última solicitud</span>
 						<span class="value"><?= !empty($producto['last_request_date']) ? date('d/m/Y H:i', strtotime($producto['last_request_date'])) : 'Sin registros' ?></span>
 					</div>
 					<div class="detail-item">

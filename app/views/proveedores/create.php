@@ -24,19 +24,19 @@ Session::requireLogin(['Administrador', 'Almacen', 'Compras']);
             <?php if ($role === 'Administrador'): ?>
                 <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
-                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php elseif ($role === 'Almacen'): ?>
                 <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
-                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php elseif ($role === 'Compras'): ?>
                 <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
-                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php endif; ?>
@@ -69,10 +69,10 @@ Session::requireLogin(['Administrador', 'Almacen', 'Compras']);
                 </div>
                 <div class="form-row">
                     <label>RFC:<input type="text" name="rfc" value="<?= htmlspecialchars($data['rfc'] ?? '') ?>"></label>
-                    <label>Telefono:<input type="text" name="telefono" value="<?= htmlspecialchars($data['telefono'] ?? '') ?>"></label>
+                    <label>Teléfono:<input type="text" name="telefono" value="<?= htmlspecialchars($data['telefono'] ?? '') ?>"></label>
                 </div>
                 <label>Email:<input type="email" name="email" value="<?= htmlspecialchars($data['email'] ?? '') ?>"></label>
-                <label>Direccion:<input type="text" name="direccion" value="<?= htmlspecialchars($data['direccion'] ?? '') ?>"></label>
+                <label>Dirección:<input type="text" name="direccion" value="<?= htmlspecialchars($data['direccion'] ?? '') ?>"></label>
                 <label>Condiciones de pago:<input type="text" name="condiciones_pago" value="<?= htmlspecialchars($data['condiciones_pago'] ?? '') ?>"></label>
                 <div class="form-actions">
                     <button type="submit" class="btn-principal">Registrar</button>

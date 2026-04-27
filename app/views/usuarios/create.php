@@ -29,7 +29,7 @@
                     <label>Rol:</label>
                     <select name="role" required>
                         <option value="Empleado">Empleado</option>
-                        <option value="Almacen">Almacen</option>
+                        <option value="Almacen">Almacén</option>
                         <option value="Compras">Compras</option>
                         <option value="Administrador">Administrador</option>
                     </select>

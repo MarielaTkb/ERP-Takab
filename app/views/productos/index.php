@@ -54,40 +54,40 @@ function format_stock($value) {
             <div class="login-logo"><img src="assets/images/icono_takab.png" alt="logo_TAKAB" width="90" height="55"></div>
             <div>
                 <div class="sidebar-title">TAKAB</div>
-                <div class="sidebar-desc">Inventario y almac?n</div>
+                <div class="sidebar-desc">Inventario y almacén</div>
             </div>
         </div>
         <nav class="sidebar-nav">
             <a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
             <?php if ($role === 'Administrador'): ?>
-                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gesti?n de Productos</a>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
-                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
-                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotaci?n de Inventario</a>
+                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Préstamos de herramientas</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotación de Inventario</a>
                 <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuraci?n</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentaci?n</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>
             <?php elseif ($role === 'Almacen'): ?>
-                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gesti?n de Productos</a>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
-                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
-                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotaci?n de Inventario</a>
+                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Préstamos de herramientas</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotación de Inventario</a>
                 <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
                 <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuraci?n</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentaci?n</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>
             <?php elseif ($role === 'Compras'): ?>
-              <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gesti?n de Productos</a>
+              <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentaci?n</a>  
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>  
             <?php elseif ($role === 'Empleado'): ?>
                 <a href="solicitudes_crear.php"><i class="fa-solid fa-plus-square"></i> Solicitar Material</a>
                 <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
             <?php endif; ?>
-            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesi?n</a>
+            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</a>
         </nav>
     </aside>
 
@@ -133,9 +133,9 @@ function format_stock($value) {
 
             <div class="productos-header">
                 <div>
-                    <h1>Gesti?n de Productos</h1>
-                    <p class="productos-header-desc">Administra el cat?logo de materiales y herramientas de TAKAB.</p>
-                    <p class="productos-import-note desktop-only">Usa la plantilla para cargar m?ltiples productos. Los valores deben corresponder con los IDs de cat?logos ya registrados (categor?as, proveedores, almacenes, unidades).</p>
+                    <h1>Gestión de Productos</h1>
+                    <p class="productos-header-desc">Administra el catálogo de materiales y herramientas de TAKAB.</p>
+                    <p class="productos-import-note desktop-only">Usa la plantilla para cargar múltiples productos. Los valores deben corresponder con los IDs de catálogos ya registrados (categorías, proveedores, almacenes, unidades).</p>
                 </div>
                 <div class="productos-header-actions">
                     <a class="btn-secondary" href="productos_template.php"><i class="fa-solid fa-download"></i> Descargar plantilla</a>
@@ -146,10 +146,10 @@ function format_stock($value) {
                         </label>
                         <button type="submit" class="btn-main"><i class="fa-solid fa-upload"></i> Importar productos</button>
                     </form>
-                    <a class="btn-secondary" href="productos_barcode.php"><i class="fa fa-barcode"></i> Buscar por codigo</a>
+                    <a class="btn-secondary" href="productos_barcode.php"><i class="fa fa-barcode"></i> Buscar por código</a>
                     <a class="btn-main" href="productos_create.php"><i class="fa fa-plus"></i> Nuevo producto</a>
                 </div>
-                <p class="productos-import-note mobile-only">Usa la plantilla para cargar m?ltiples productos. Los valores deben corresponder con los IDs de cat?logos ya registrados (categor?as, proveedores, almacenes, unidades).</p>
+                <p class="productos-import-note mobile-only">Usa la plantilla para cargar múltiples productos. Los valores deben corresponder con los IDs de catálogos ya registrados (categorías, proveedores, almacenes, unidades).</p>
             </div>
 
             <section class="productos-stats-grid">
@@ -179,10 +179,10 @@ function format_stock($value) {
                 <form method="get" class="productos-filters-form">
                     <div class="filter-row">
                         <div class="filter-field">
-                            <label for="buscar">B?squeda global</label>
+                            <label for="buscar">Búsqueda global</label>
                             <div class="filter-input-icon">
                                 <i class="fa fa-search"></i>
-                                <input type="text" id="buscar" name="buscar" placeholder="Nombre, c?digo, descripci?n o tags" value="<?= htmlspecialchars($filtros['buscar']) ?>">
+                                <input type="text" id="buscar" name="buscar" placeholder="Nombre, código, descripción o tags" value="<?= htmlspecialchars($filtros['buscar']) ?>">
                             </div>
                         </div>
                         <div class="filter-field">
@@ -206,7 +206,7 @@ function format_stock($value) {
 
                     <div class="filter-row">
                         <div class="filter-field">
-                            <label for="categoria_id">Categor?a</label>
+                            <label for="categoria_id">Categoría</label>
                             <select id="categoria_id" name="categoria_id">
                                 <option value="">Todas</option>
                                 <?php foreach ($categorias as $categoria): ?>
@@ -215,7 +215,7 @@ function format_stock($value) {
                             </select>
                         </div>
                         <div class="filter-field">
-                            <label for="almacen_id">Almac?n</label>
+                            <label for="almacen_id">Almacén</label>
                             <select id="almacen_id" name="almacen_id">
                                 <option value="">Todos</option>
                                 <?php foreach ($almacenes as $almacen): ?>
@@ -233,7 +233,7 @@ function format_stock($value) {
                             </select>
                         </div>
                         <div class="filter-field">
-                            <label for="estado">Estado f?sico</label>
+                            <label for="estado">Estado físico</label>
                             <select id="estado" name="estado">
                                 <option value="">Todos</option>
                                 <?php foreach ($estadosProducto as $estado): ?>
@@ -307,8 +307,8 @@ function format_stock($value) {
 
             <section class="productos-table-card">
                 <div class="productos-table-header">
-                    <h2><i class="fa-solid fa-cubes"></i> Cat?logo (<?= number_format($stats['total']) ?>)</h2>
-                    <span class="productos-table-sub">Resultados seg?n filtros aplicados</span>
+                    <h2><i class="fa-solid fa-cubes"></i> Catálogo (<?= number_format($stats['total']) ?>)</h2>
+                    <span class="productos-table-sub">Resultados según filtros aplicados</span>
                 </div>
                 <div class="productos-table-wrapper">
                     <?php if (empty($productos)): ?>
@@ -320,15 +320,15 @@ function format_stock($value) {
                         <table class="productos-table">
                             <thead>
                             <tr>
-                                <th>C?digo</th>
-                                <th>Codigo de barras</th>
+                                <th>Código</th>
+                                <th>Código de barras</th>
                                 <th>Producto</th>
                                 <th>Tipo</th>
-                                <th>Categor?a</th>
+                                <th>Categoría</th>
                                 <th class="col-stock">Stock</th>
                                 <th>Estado</th>
                                 <th>Disponibilidad</th>
-                                <th>Almac?n</th>
+                                <th>Almacén</th>
                                 <th>Proveedor</th>
                                 <th>Valor</th>
                                 <th class="col-actions">Acciones</th>

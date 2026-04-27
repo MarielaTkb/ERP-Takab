@@ -152,7 +152,7 @@ $buildQuery = function(array $overrides = []) {
                             </div>
                         </div>
                         <div class="inv-filter-field">
-                            <label for="codigo_barras">Codigo de barras</label>
+                            <label for="codigo_barras">Código de barras</label>
                             <input type="text" id="codigo_barras" name="codigo_barras" value="<?= htmlspecialchars($filtros['codigo_barras'] ?? '') ?>" placeholder="Escanea o escribe codigo">
                         </div>
                         <div class="inv-filter-field">
@@ -195,7 +195,7 @@ $buildQuery = function(array $overrides = []) {
                             </select>
                         </div>
                         <div class="inv-filter-field">
-                            <label for="estado">Estado f?sico</label>
+                            <label for="estado">Estado físico</label>
                             <select id="estado" name="estado">
                                 <option value="">Todos</option>
                                 <?php foreach ($estadosProducto as $estado): ?>
@@ -253,7 +253,7 @@ $buildQuery = function(array $overrides = []) {
                             </select>
                         </div>
                         <div class="inv-filter-field">
-                            <label for="per_page">Resultados por p?gina</label>
+                            <label for="per_page">Resultados por página</label>
                             <select id="per_page" name="per_page" onchange="this.form.submit()">
                                 <?php foreach ($perPageOptions as $option): ?>
                                     <option value="<?= $option ?>" <?= (int)$perPage === (int)$option ? 'selected' : '' ?>><?= $option ?></option>

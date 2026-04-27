@@ -6,10 +6,8 @@
     <title><?= htmlspecialchars($moduleTitle); ?> - TAKAB</title>
     <link rel="stylesheet" href="assets/css/dashboard.css">
     <link rel="stylesheet" href="assets/css/config.css">
-    <link rel="stylesheet" href="assets/css/bancos.css">
+    <link rel="stylesheet" href="assets/css/ventas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    
     <style>
         body, html { 
             background-color: #f5f7fa;
@@ -20,14 +18,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 24px 16px;
-            background:  linear-gradient(90deg, rgba(9, 19, 46, 0.67) 0%, rgba(12, 27, 63, 0.57) 58%, rgba(12, 27, 63, 0.9) 100%),              
+            background:  linear-gradient(90deg, rgba(9, 19, 46, 0.67) 0%, rgba(12, 27, 63, 0.57) 58%, rgba(12, 27, 63, 0.9) 100%),
             radial-gradient(circle at 18% 70%, rgba(255, 255, 255, 0.10), transparent 45%);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
-     </style>
+    </style>
 </head>
 <body>
     <div class="wrap">
@@ -44,8 +41,8 @@
             <div class="note">
                 <i class="fa fa-tools" style="color: #dbac02; margin-right:10px; font-size: 3.5rem;"></i>
                 <b>En construcción.</b> Este módulo aún no está implementado.
-                Cuando se desarrolle, aquí irán los menús, vistas y controladores de Bancos.
-            </div>
+                Aquí se integrará: cotizaciones, costos y facturación.
+           </div>
 
             <div class="actions">
                 <a class="btn secondary" href="menu.php"><i class="fa-solid fa-layer-group"></i> Cambiar módulo</a>

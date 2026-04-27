@@ -26,40 +26,40 @@ $breadcrumbs = [
             <div class="login-logo"><img src="assets/images/icono_takab.png" alt="logo_TAKAB" width="90" height="55"></div>
             <div>
                 <div class="sidebar-title">TAKAB</div>
-                <div class="sidebar-desc">Inventario y almac?n</div>
+                <div class="sidebar-desc">Inventario y almacén</div>
             </div>
         </div>
         <nav class="sidebar-nav">
             <a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
             <?php if ($role === 'Administrador'): ?>
-                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gesti?n de Productos</a>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
-                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
-                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotaci?n de Inventario</a>
+                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Préstamos de herramientas</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotación de Inventario</a>
                 <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuraci?n</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentaci?n</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>
             <?php elseif ($role === 'Almacen'): ?>
-                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gesti?n de Productos</a>
+                <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
-                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Prestamos de herramientas</a>
-                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotaci?n de Inventario</a>
+                <a href="prestamos_pendientes.php" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Préstamos de herramientas</a>
+                <a href="reportes_rotacion.php" class="active"><i class="fa-solid fa-refresh"></i> Rotación de Inventario</a>
                 <a href="revisar_solicitudes.php"><i class="fa-solid fa-plus-square"></i> Solicitudes de Material</a>
                 <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuraci?n</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentaci?n</a>
+                <a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuración</a>
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>
             <?php elseif ($role === 'Compras'): ?>
-              <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gesti?n de Productos</a>
+              <a href="productos.php"><i class="fa-solid fa-boxes-stacked"></i> Gestión de Productos</a>
                 <a href="inventario_actual.php" class="active"><i class="fa-solid fa-list-check"></i> Inventario</a>
                 <a href="reportes.php"><i class="fa-solid fa-chart-line"></i> Reportes</a>
-                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentaci?n</a>  
+                <a href="documentacion.php"><i class="fa-solid fa-book"></i>Documentación</a>  
             <?php elseif ($role === 'Empleado'): ?>
                 <a href="solicitudes_crear.php"><i class="fa-solid fa-plus-square"></i> Solicitar Material</a>
                 <a href="mis_solicitudes.php"><i class="fa-solid fa-clipboard-list"></i> Mis Solicitudes</a>
             <?php endif; ?>
-            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesi?n</a>
+            <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión</a>
         </nav>
     </aside>
     <div class="content-area">
@@ -82,7 +82,7 @@ $breadcrumbs = [
             <div class="productos-header">
                 <div>
                     <h1>Editar producto</h1>
-                    <p class="productos-header-desc">Actualiza los datos del art&iacute;culo seleccionado.</p>
+                    <p class="productos-header-desc">Actualiza los datos del artículo seleccionado.</p>
                 </div>
                 <div class="productos-header-actions">
                     <a class="btn-secondary" href="productos.php"><i class="fa fa-arrow-left"></i> Volver al listado</a>
@@ -93,16 +93,16 @@ $breadcrumbs = [
             <form method="post" enctype="multipart/form-data" autocomplete="off">
                 <input type="hidden" name="csrf" value="<?= Session::csrfToken() ?>">
                 <section class="productos-form-card">
-                    <h2><i class="fa fa-info-circle"></i> Informaci&oacute;n general</h2>
+                    <h2><i class="fa fa-info-circle"></i> Información general</h2>
                     <div class="productos-form-grid">
                         <div class="productos-form-field">
-                            <label for="codigo">C&oacute;digo interno *</label>
+                            <label for="codigo">Código interno *</label>
                             <input type="text" id="codigo" name="codigo" value="<?= htmlspecialchars($values['codigo'] ?? '') ?>" required>
                         </div>
                         <div class="productos-form-field">
-                            <label for="codigo_barras">Codigo de barras</label>
-                            <input type="text" id="codigo_barras" name="codigo_barras" value="<?= htmlspecialchars($values['codigo_barras'] ?? '') ?>" placeholder="Generado automaticamente si se deja vacio">
-                            <span class="productos-form-note">Escanea o deja vacio para autogenerar.</span>
+                            <label for="codigo_barras">Código de barras</label>
+                            <input type="text" id="codigo_barras" name="codigo_barras" value="<?= htmlspecialchars($values['codigo_barras'] ?? '') ?>" placeholder="Generado automáticamente si se deja vacío">
+                            <span class="productos-form-note">Escanea o deja vacío para autogenerar.</span>
                         </div>
                         <div class="productos-form-field">
                             <label for="nombre">Nombre *</label>
@@ -117,7 +117,7 @@ $breadcrumbs = [
                             </select>
                         </div>
                         <div class="productos-form-field">
-                            <label for="estado">Estado f&iacute;sico *</label>
+                            <label for="estado">Estado físico *</label>
                             <select id="estado" name="estado" required>
                                 <?php foreach ($estadosProducto as $estado): ?>
                                     <option value="<?= $estado ?>" <?= (($values['estado'] ?? '') === $estado) ? 'selected' : '' ?>><?= htmlspecialchars($estado) ?></option>
@@ -125,9 +125,9 @@ $breadcrumbs = [
                             </select>
                         </div>
                         <div class="productos-form-field">
-                            <label for="categoria_id">Categor&iacute;a *</label>
+                            <label for="categoria_id">Categoría *</label>
                             <select id="categoria_id" name="categoria_id" required>
-                                <option value="">Selecciona una categor&iacute;a</option>
+                                <option value="">Selecciona una categoría</option>
                                 <?php foreach ($categorias as $categoria): ?>
                                     <option value="<?= $categoria['id'] ?>" <?= (($values['categoria_id'] ?? '') == $categoria['id']) ? 'selected' : '' ?>><?= htmlspecialchars($categoria['nombre']) ?></option>
                                 <?php endforeach; ?>
@@ -143,7 +143,7 @@ $breadcrumbs = [
                             </select>
                         </div>
                         <div class="productos-form-field">
-                            <label for="descripcion">Descripci&oacute;n</label>
+                            <label for="descripcion">Descripción</label>
                             <textarea id="descripcion" name="descripcion" rows="3"><?= htmlspecialchars($values['descripcion'] ?? '') ?></textarea>
                         </div>
                         <div class="productos-form-field">
@@ -163,7 +163,7 @@ $breadcrumbs = [
                             <input type="text" id="forma" name="forma" value="<?= htmlspecialchars($values['forma'] ?? '') ?>">
                         </div>
                         <div class="productos-form-field">
-                            <label for="especificaciones_tecnicas">Especificaciones t&eacute;cnicas</label>
+                            <label for="especificaciones_tecnicas">Especificaciones técnicas</label>
                             <textarea id="especificaciones_tecnicas" name="especificaciones_tecnicas" rows="3"><?= htmlspecialchars($values['especificaciones_tecnicas'] ?? '') ?></textarea>
                         </div>
                         <div class="productos-form-field">
@@ -212,16 +212,16 @@ $breadcrumbs = [
                     <h2><i class="fa fa-warehouse"></i> Inventario y costos</h2>
                     <div class="productos-form-grid">
                         <div class="productos-form-field">
-                            <label for="almacen_id">Almac&eacute;n asignado *</label>
+                            <label for="almacen_id">Almacén asignado *</label>
                             <select id="almacen_id" name="almacen_id" required>
-                                <option value="">Selecciona un almac&eacute;n</option>
+                                <option value="">Selecciona un almacén</option>
                                 <?php foreach ($almacenes as $almacen): ?>
                                     <option value="<?= $almacen['id'] ?>" <?= (($values['almacen_id'] ?? '') == $almacen['id']) ? 'selected' : '' ?>><?= htmlspecialchars($almacen['nombre']) ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
                         <div class="productos-form-field">
-                            <label for="ubicacion_fisica">Ubicaci&oacute;n f&iacute;sica</label>
+                            <label for="ubicacion_fisica">Ubicación física</label>
                             <input type="text" id="ubicacion_fisica" name="ubicacion_fisica" value="<?= htmlspecialchars($values['ubicacion_fisica'] ?? '') ?>" placeholder="Ej. Estante A-3">
                         </div>
                         <div class="productos-form-field">
@@ -229,7 +229,7 @@ $breadcrumbs = [
                             <input type="number" step="0.01" id="stock_actual" name="stock_actual" min="0" value="<?= htmlspecialchars($values['stock_actual'] ?? '0') ?>" required>
                         </div>
                         <div class="productos-form-field">
-                            <label for="stock_minimo">Stock m&iacute;nimo *</label>
+                            <label for="stock_minimo">Stock mínimo *</label>
                             <input type="number" step="0.01" id="stock_minimo" name="stock_minimo" min="0" value="<?= htmlspecialchars($values['stock_minimo'] ?? '0') ?>" required>
                         </div>
                         <div class="productos-form-field">
@@ -257,7 +257,7 @@ $breadcrumbs = [
                         <div class="productos-form-field">
                             <label for="imagen_url">Actualizar imagen</label>
                             <input type="file" id="imagen_url" name="imagen_url" accept="image/*">
-                            <span class="productos-form-note">Si no seleccionas ning&uacute;n archivo se conservar&aacute; la imagen actual.</span>
+                            <span class="productos-form-note">Si no seleccionas ningún archivo se conservará la imagen actual.</span>
                         </div>
                     </div>
                 </section>

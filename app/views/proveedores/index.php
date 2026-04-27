@@ -28,19 +28,19 @@ $nombre = $_SESSION['nombre'] ?? '';
             <?php if ($role === 'Administrador'): ?>
                 <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
-                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php elseif ($role === 'Almacen'): ?>
                 <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
-                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php elseif ($role === 'Compras'): ?>
                 <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
-                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php endif; ?>
@@ -60,7 +60,7 @@ $nombre = $_SESSION['nombre'] ?? '';
                             <span class="config-icon gradient-blue"><i class="fa-solid fa-truck"></i></span>
                             Proveedores
                         </div>
-                        <p class="config-section-desc">Registra a tus proveedores y mant?n sus datos de contacto actualizados.</p>
+                        <p class="config-section-desc">Registra a tus proveedores y mantén sus datos de contacto actualizados.</p>
                     </div>
                 </div>
                 <div class="config-section-actions" style="margin-bottom:18px;">
@@ -69,7 +69,7 @@ $nombre = $_SESSION['nombre'] ?? '';
                 </div>
 
                 <?php if (isset($_GET['error']) && $_GET['error'] === 'csrf'): ?>
-                    <div class="alert alert-danger"><i class="fa fa-triangle-exclamation"></i> No pudimos completar la acci?n por motivos de seguridad.</div>
+                    <div class="alert alert-danger"><i class="fa fa-triangle-exclamation"></i> No pudimos completar la acción por motivos de seguridad.</div>
                 <?php endif; ?>
                 <?php if (isset($_GET['deleted'])): ?>
                     <div class="alert alert-success"><i class="fa fa-check-circle"></i> Proveedor eliminado correctamente.</div>
@@ -80,9 +80,9 @@ $nombre = $_SESSION['nombre'] ?? '';
                         <tr>
                             <th>Nombre</th>
                             <th>Contacto</th>
-                            <th>Tel?fono</th>
+                            <th>Teléfono</th>
                             <th>Email</th>
-                            <th>Direcci?n</th>
+                            <th>Dirección</th>
                             <th>Condiciones de pago</th>
                             <th>Acciones</th>
                         </tr>

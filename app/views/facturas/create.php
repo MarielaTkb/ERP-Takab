@@ -80,21 +80,21 @@ $previewTotal = $previewSubtotal + $previewImpuestos;
         </div>
         <nav class="sidebar-nav">     
             <?php if ($role === 'Administrador'): ?>
-                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
+                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
-                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php elseif ($role === 'Almacen'): ?>
-                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
+                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
-                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php elseif ($role === 'Compras'): ?>
-                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Ordenes de compra</a>
+                <a href="ordenes_compra.php"><i class="fa-solid fa-file-invoice-dollar"></i> Órdenes de compra</a>
                 <a href="facturas.php"><i class="fa-solid fa-file-circle-check"></i> Facturas de compra</a>
-                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Orden</a>
+                <a href="ordenes_compra_crear.php"><i class="fa-solid fa-plus"></i> Nueva Órden</a>
                 <a href="proveedores.php"><i class="fa-solid fa-address-book"></i> Proveedores</a>
                 <a href="compras_proveedor.php"><i class="fa-solid fa-shopping-cart"></i> Compras por proveedor</a>
             <?php endif; ?>
@@ -112,7 +112,7 @@ $previewTotal = $previewSubtotal + $previewImpuestos;
                 <a href="facturas.php" class="btn-secondary"><i class="fa-solid fa-arrow-left"></i> Volver</a>
             </div>
 
-            <div class="alert-info"><i class="fa-solid fa-circle-info"></i> Las ordenes de compra solo registran compromisos. Usa esta pantalla para sumar productos al inventario.</div>
+            <div class="alert-info"><i class="fa-solid fa-circle-info"></i> Las órdenes de compra solo registran compromisos. Usa esta pantalla para sumar productos al inventario.</div>
 
             <?php if (!empty($errors)): ?>
                 <div class="alert-error">
@@ -129,7 +129,7 @@ $previewTotal = $previewSubtotal + $previewImpuestos;
                 <input type="hidden" name="csrf" value="<?= Session::csrfToken() ?>">
                 <section class="form-grid">
                     <div>
-                        <label for="numero_factura">Numero de factura</label>
+                        <label for="numero_factura">Número de factura</label>
                         <input type="text" name="numero_factura" id="numero_factura" value="<?= htmlspecialchars($facturaData['numero_factura'] ?? '') ?>" placeholder="Folio del proveedor">
                     </div>
                     <div>
@@ -137,9 +137,9 @@ $previewTotal = $previewSubtotal + $previewImpuestos;
                         <input type="date" name="fecha" id="fecha" value="<?= htmlspecialchars($facturaData['fecha'] ?? date('Y-m-d')) ?>">
                     </div>
                     <div>
-                        <label for="orden_id">Orden de compra (opcional)</label>
+                        <label for="orden_id">Órden de compra (opcional)</label>
                         <select name="orden_id" id="orden_id">
-                            <option value="">Sin orden asociada</option>
+                            <option value="">Sin órden asociada</option>
                             <?php foreach ($ordenes as $orden): ?>
                                 <option value="<?= (int) $orden['id'] ?>"
                                         data-proveedor="<?= (int) $orden['proveedor_id'] ?>"
@@ -162,9 +162,9 @@ $previewTotal = $previewSubtotal + $previewImpuestos;
                         </select>
                     </div>
                     <div>
-                        <label for="almacen_id">Almacen que recibe *</label>
+                        <label for="almacen_id">Almacén que recibe *</label>
                         <select name="almacen_id" id="almacen_id" required>
-                            <option value="">Selecciona almacen</option>
+                            <option value="">Selecciona almacén</option>
                             <?php foreach ($almacenes as $alm): ?>
                                 <option value="<?= (int) $alm['id'] ?>" <?= (int) ($facturaData['almacen_id'] ?? 0) === (int) $alm['id'] ? 'selected' : '' ?>>
                                     <?= htmlspecialchars($alm['nombre']) ?>

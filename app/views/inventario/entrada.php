@@ -95,7 +95,7 @@ $breadcrumbs = [
                         <div class="form-field" style="margin-bottom:14px;">
                             <label>Buscador avanzado</label>
                             <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:10px;">
-                                <input type="text" id="filtro_texto" placeholder="Buscar por nombre, codigo o barras">
+                                <input type="text" id="filtro_texto" placeholder="Buscar por nombre, código o barras">
                                 <select id="filtro_tipo">
                                     <option value="">Tipo (todos)</option>
                                     <option value="Consumible">Consumible</option>
@@ -103,7 +103,7 @@ $breadcrumbs = [
                                     <option value="Equipo">Equipo</option>
                                 </select>
                                 <select id="filtro_categoria">
-                                    <option value="">Categoria (todas)</option>
+                                    <option value="">Categoría (todas)</option>
                                     <?php foreach (array_keys($categoriasFiltro) as $categoriaNombre): ?>
                                         <option value="<?= htmlspecialchars($categoriaNombre) ?>"><?= htmlspecialchars($categoriaNombre) ?></option>
                                     <?php endforeach; ?>

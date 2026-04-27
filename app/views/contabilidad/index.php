@@ -42,7 +42,7 @@
             <div class="note">
                 <i class="fa fa-tools" style="color: #dbac02; margin-right:10px; font-size: 3.5rem;"></i>
                 <b>En construcción.</b> Este módulo aún no está implementado.
-                Aquí se integrará la gestión contable: pólizas, catálogo de cuentas, balanzas y estados financieros.
+                Cuando se desarrolle, aquí irán los menús, vistas y controladores de Contabilidad.
             </div>
 
             <div class="actions">
